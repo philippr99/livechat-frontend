@@ -1,0 +1,31 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
+}
+
+/*FlexBox over the whole app-root container*/
+app-root {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/*Expand the content below the navbar over flex, 
+gives the possibility to use hight:100% in the 
+children to center elements for example*/
+app-login {
+  flex-grow: 1;
+  background-color: gainsboro;
+}
+app-home {
+  flex-grow: 1;
+  /*min-height:0 doesn't allow the childen to be bigger than 100%*/
+  min-height: 0;
+  background-color: whitesmoke;
+}
+
+a {
+  cursor: pointer;
+}

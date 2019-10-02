@@ -1,0 +1,32 @@
+<div class="full-container">
+    <div class="row h-100">
+        <div class="col-md-6 align-self-center mx-auto">
+            <div class="card">
+                <h4 class="card-header">Livechat Login</h4>
+                <div class="card-body">
+                    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                        <div class="form-group">
+                            <label>Username</label>
+                            <input type="text" formControlName="username" class="form-control"
+                                [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+                            <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                                <div *ngIf="f.username.errors.required">
+                                    Username is required!
+                                </div>
+                                <div *ngIf="f.username.errors.minlength">
+                                    Username must be at least 8 characters.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <button class="btn btn-primary mr-1">Login</button>
+                            <button class="btn btn-secondary" type="reset" (click)="onReset()">
+                                Cancel
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

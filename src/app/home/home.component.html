@@ -1,0 +1,24 @@
+<div class="container">
+    <h2>Livechat</h2>
+    <div id="messageContainer">
+        <div *ngFor="let item of messages" class="messageElement">
+            <div class="messageAuthor col-2">
+                <p>{{item.author}}: </p>
+            </div>
+            <div class="messageContent col-8">
+                <p>{{item.content}}</p>
+            </div>
+            <div class="messageTime col-2">
+                <p>{{epochToDateString(item.timestamp)}}</p>
+            </div>
+        </div>
+    </div>
+    <div class="row" id="sendBox">
+        <div class="col-8">
+            <input id="messageContentForm" [(ngModel)]="messageContent" class="form-control" placeholder="Type in your message.."/>
+        </div>
+        <div class="col-4">
+            <button class="btn btn-outline-primary" (click)="onMessageSend()">Send</button>
+        </div>
+    </div>
+</div>
